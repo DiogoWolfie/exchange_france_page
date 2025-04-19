@@ -60,7 +60,7 @@ $(document).ready(function() {
   switchLanguage('pt');
 
   // Oculta as mensagens de sucesso ao carregar a página
-  $('#copy-success, #copy-success-copy-paste, #copy-success-paypal').hide();
+  $('#copy-success, #copy-success-copy-paste, #copy-success-btg, #copy-success-copy-paste-btg').hide();
 
   $('#copy-button').on('click', function() {
     console.log('Copiando Chave PIX');
@@ -74,10 +74,16 @@ $(document).ready(function() {
     copyToClipboard(pixCopyPaste, 'copy-success-copy-paste');
   });
 
-  $('#copy-button-paypal').on('click', function() {
-    console.log('Copiando PayPal Email');
-    var paypalEmail = $('#paypal-email').text();
-    copyToClipboard(paypalEmail, 'copy-success-paypal');
+  $('#copy-button-copy-paste-btg').on('click', function() {
+    console.log('Copiando PIX Copia e Cola');
+    var pixCopyPaste = $('#pix-copy-paste-btg').text();
+    copyToClipboard(pixCopyPaste, 'copy-success-copy-paste-btg');
+  });
+
+  $('#copy-button-btg').on('click', function() {
+    console.log('Copiando BTG Email');
+    var BTGEmail = $('#BTG-email').text();
+    copyToClipboard(BTGEmail, 'copy-success-btg');
   });
 
   // Função genérica para copiar texto para a área de transferência
